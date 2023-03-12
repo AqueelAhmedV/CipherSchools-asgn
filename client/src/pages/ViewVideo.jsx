@@ -55,7 +55,7 @@ export default function ViewVideo() {
             </div>
           </div>
           <div className="p-10">
-            <div className="flex items-center justify-between text-white rounded bg-gray-900 my-3 px-3 py-4">
+            <div className="flex items-center justify-between text-white rounded bg-gray-900 mt-6 mb-3 px-3 py-4">
               <div className="flex">
               <div className="mr-4 flex items-center">
                 <button
