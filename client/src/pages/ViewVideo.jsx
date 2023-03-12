@@ -30,7 +30,8 @@ export default function ViewVideo() {
   };
   useEffect(() => {
     fetchVideo();
-  }, [Object.keys(video).length === 0]);
+    getFeatured()
+  }, [Object.keys(video).length === 0]); 
 
   const [liked, setLiked] = useState(false);
 
@@ -91,10 +92,10 @@ export default function ViewVideo() {
             {featured.length === 0 ? (
               <Skeleton count={5} height="180px" width="320px" />
             ) : (
-              featured.map((f) => {
+              featured.map((f, i) => {
                 return (
                   <div>
-                    <VideoCard />
+                    <VideoCard key={i} video={f}/>
                   </div>
                 );
               })
