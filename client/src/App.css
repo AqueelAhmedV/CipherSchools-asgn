@@ -1,5 +1,18 @@
-* {
+.navbar {
     font-family: Righteous;
+    color: gray;
+    font-weight: 400;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color:beige;
+}
+
+#navbar {
+    font-family: Righteous;
+    color: gray;
+    font-weight: 400;
 }
 
 body {
