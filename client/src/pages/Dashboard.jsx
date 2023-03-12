@@ -10,7 +10,7 @@ export default function Dashboard() {
                 <span className="font-righteous font-large uppercase lg:-translate-y-8">Unlimited entertainment at your fingertips, anytime, anywhere.</span>
                 </div>
                 <div className="">
-                    <VideoPlayer playbackId='6jZR9zue004CpGrZUYr3LOEGLLYI0002Lw7RcWQWNQjL4Q'/>
+                    <VideoPlayer playbackId='6jZR9zue004CpGrZUYr3LOEGLLYI0002Lw7RcWQWNQjL4Q' loop={true} autoPlay={true} muted={true}/>
                 </div>
             </div>
             <div className=" sm:row-span-5">
