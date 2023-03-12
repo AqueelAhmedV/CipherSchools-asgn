@@ -2,7 +2,7 @@ import moment from 'moment';
 
 function CommentBox({ video, loaded }) {
   return (
-    <div className="bg-gray-800 shadow-lg rounded-lg overflow-hidden mt-4">
+    <div className="bg-gray-800 shadow-lg rounded-lg overflow-hidden mt-8">
         {(loaded===true)?<div>
       <h2 className="text-2xl font-bold text-white py-4 px-6">Comments</h2>
       <div className="p-6">
