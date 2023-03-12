@@ -5,7 +5,7 @@ import CommentBox from "../components/CommentBox";
 import VideoPlayer from "../components/VideoPlayer";
 import axios from "axios";
 import VideoCard from "../components/VideoCard";
-import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
+import { HandThumbUpIcon, HandThumbDownIcon } from "@heroicons/react/24/outline";
 
 export default function ViewVideo() {
   const { videoId } = useParams();
@@ -50,7 +50,7 @@ export default function ViewVideo() {
               {videoLoading ? (
                 <Skeleton className="lg:h-[360px] md:h-[270px] sm:h-[180px]" />
               ) : (
-                <VideoPlayer playbackId={video.playback_id} autoPlay={false}/>
+                <VideoPlayer playbackId={video.playback_id} autoPlay={false} />
               )}
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function ViewVideo() {
                   className={`mr-2 ${liked ? "text-blue-500" : ""}`}
                   onClick={handleLike}
                 >
-                  <FaThumbsUp />
+                  <HandThumbUpIcon />
                 </button>
                 <span>{liked ? "1" : "0"}</span>
               </div>
@@ -71,7 +71,7 @@ export default function ViewVideo() {
                   className={`mr-2 ${!liked ? "text-blue-500" : ""}`}
                   onClick={handleUnlike}
                 >
-                  <FaThumbsDown />
+                  <HandThumbDownIcon />
                 </button>
                 <span>{!liked ? "1" : "0"}</span>
               </div>
