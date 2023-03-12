@@ -46,7 +46,7 @@ export default function ViewVideo() {
       <div className="grid-cols-3 grid">
         <div className="col-span-2 flex flex-col">
           <div className="h-fit">
-            <div className="p-4 mb-4">
+            <div className="p-4 mb-1">
               {videoLoading ? (
                 <Skeleton className="lg:h-[360px] md:h-[270px] sm:h-[180px]" />
               ) : (
@@ -54,8 +54,8 @@ export default function ViewVideo() {
               )}
             </div>
           </div>
-          <div className="p-10">
-            <div className="flex items-center justify-between text-white rounded bg-gray-900 mt-8 mb-3 px-3 py-4">
+          <div className="pt-4 px-10">
+            <div className="flex items-center justify-between text-white rounded bg-gray-900 mb-3 px-3 py-4">
               <div className="flex">
               <div className="mr-4 flex items-center">
                 <button
