@@ -1,42 +1,29 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
-const passport = require('passport')
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors')
 
-const users = require('./routes/api/users')
+const videos = require('./routes/api/videos');
 
+const app = express();
+app.use(cors())
 
-const app = express()
+// Body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
+// DB Config
+const db = require('./config/keys').mongoURI;
 
-const keys = require('./config/keys')
-
-mongoose.set('strictQuery', true)
+// Connect to MongoDB
 mongoose
-    .connect(keys.mongoURI)
-    .then(() => console.log('MongoDB connected'))
-    .catch((err) => console.log(err))
-
-    app.use(function(req, res, next) {
-        res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
-        res.header(
-          'Access-Control-Allow-Headers',
-          'Origin, X-Requested-With, Content-Type, Accept'
-        );
-        next();
-      });
-
-// Passport middleware
-app.use(passport.initialize());
-
-// Passport config
-require('./config/passport')(passport);
-
-app.use('/api/users', users)
+  .connect(db, {useUnifiedTopology: true, useNewUrlParser: true})
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
 
 
-const port = process.env.PORT || 5000
+app.use('/api/videos', videos);
 
-app.listen(port, () => console.log(`server running on port ${port}`));
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Server running on port ${port}`));
