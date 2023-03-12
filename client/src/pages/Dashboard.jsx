@@ -13,7 +13,7 @@ export default function Dashboard() {
                     <VideoPlayer playbackId='6jZR9zue004CpGrZUYr3LOEGLLYI0002Lw7RcWQWNQjL4Q' loop={true} autoPlay={true} muted={true}/>
                 </div>
             </div>
-            <div className=" sm:row-span-5">
+            <div className="mt-3 sm:row-span-5">
                 <VideoGrid/>
             </div>
         </div>
