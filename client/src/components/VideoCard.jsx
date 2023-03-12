@@ -29,13 +29,13 @@ const VideoCard = ({ video }) => {
       className="video-card p-3 bg-[#1c1d1f] my-2 mx-1 w-fill"
     >
       <div className='thumb-container rounded-lg h-32'>
-        {isLoading ? 
+        {false ? 
         <Skeleton width={"100%"} height={"100%"}/>
         :
         <div>
           <img 
           src={`https://image.mux.com/${video.playback_id}/thumbnail.webp?width=400&height=200&fit_mode=smartcrop`} 
-          onLoad={onImgLoad}
+          loading="lazy"
           alt={video.title}
           className="h-32"
           />
